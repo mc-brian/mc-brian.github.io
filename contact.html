@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contacto - Portfolio</title>
+    <link rel="preload" href="styles.css" as="style" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="icon.png" />
+  </head>
+  <body>
+    <div
+      class="contacto"
+      style="background-image: url('backgroundcontacto.webp')"
+    >
+      <div class="overlay">
+        <div id="content" class="content">
+          <header id="main-header">
+            <nav class="navigation">
+              <ul>
+                <li><a rel="prefetch" href="index.html">Home</a></li>
+                <li><a rel="prefetch" href="about.html">About</a></li>
+                <li><a rel="prefetch" href="projects.html">Projects</a></li>
+              </ul>
+            </nav>
+          </header>
+          <section id="contact" class="text-center">
+            <h2>Contacto</h2>
+            <form action="registro.php" method="post" class="form">
+              <div class="form-group">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input
+                  type="text"
+                  name="nombre"
+                  id="nombre"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="apellido" class="form-label">Apellidos:</label>
+                <input
+                  type="text"
+                  name="apellido"
+                  id="apellido"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="correo" class="form-label">Correo:</label>
+                <input
+                  type="email"
+                  name="correo"
+                  id="correo"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="mensaje" class="form-label-mensaje">Mensaje:</label>
+                <textarea
+                  name="mensaje"
+                  id="mensaje"
+                  class="form-control-mensaje"
+                  maxlength="300"
+                  required
+                ></textarea>
+                <div class="char-count" id="charCount">0/300</div>
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Enviar" class="btn" />
+              </div>
+            </form>
+          </section>
+          <p class="social-text">También podés contactarme por estos medios:</p>
+          <div class="social-buttons">
+            <a href="https://www.linkedin.com" class="social-btn">LinkedIn</a>
+            <a href="https://www.github.com" class="social-btn">GitHub</a>
+            <a href="mailto:briancamilaa@gmail.com" class="social-btn">Mail</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        var mensaje = document.getElementById("mensaje");
+        var charCount = document.getElementById("charCount");
+
+        mensaje.addEventListener("input", function () {
+          var currentLength = mensaje.value.length;
+          charCount.textContent = currentLength + "/300";
+        });
+      });
+    </script>
+    <footer id="footer">
+      <p>&copy; 2024 Maria Camila Brian</p>
+    </footer>
+  </body>
+</html>

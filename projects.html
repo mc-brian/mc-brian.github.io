@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - Portfolio</title>
+    <link rel="preload" href="styles.css" as="style" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="icon.png" />
+  </head>
+  <body>
+    <div
+      class="proyectos"
+      style="background-image: url('backgroundproyectos.webp')"
+    >
+      <div class="overlay">
+        <div id="content" class="content">
+          <header id="main-header">
+            <nav class="navigation">
+              <ul>
+                <li><a rel="prefetch" href="index.html">Home</a></li>
+                <li><a rel="prefetch" href="about.html">About</a></li>
+                <li><a rel="prefetch" href="contact.html">Contact</a></li>
+              </ul>
+            </nav>
+          </header>
+
+          <section id="projects" class="text-center">
+            <h2>Proyectos que he desarrollado</h2>
+            <p>Aquí podrás encontrar mis proyectos (cuando los haya).</p>
+          </section>
+          <div class="card-container">
+            <div class="card" style="background-image: url('project1.webp')">
+              <div class="card-title">Project 1</div>
+              <div class="card-content">
+                <p>Acá va una breve descripción del proyecto.</p>
+                <a rel="prefetch" href="project1.html" class="read-more"
+                  >Leer más</a
+                >
+              </div>
+            </div>
+            <div class="card" style="background-image: url('project2.webp')">
+              <div class="card-title">Project 2</div>
+              <div class="card-content">
+                <p>Acá va una breve descripción del proyecto.</p>
+                <a rel="prefetch" href="project2.html" class="read-more"
+                  >Leer más</a
+                >
+              </div>
+            </div>
+            <div class="card" style="background-image: url('project3.webp')">
+              <div class="card-title">Project 3</div>
+              <div class="card-content">
+                <p>Acá va una breve descripción del proyecto.</p>
+                <a rel="prefetch" href="project3.html" class="read-more"
+                  >Leer más</a
+                >
+              </div>
+            </div>
+            <div class="card" style="background-image: url('project4.webp')">
+              <div class="card-title">Project 4</div>
+              <div class="card-content">
+                <p>Acá va una breve descripción del proyecto.</p>
+                <a rel="prefetch" href="project4.html" class="read-more"
+                  >Leer más</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+      <p>&copy; 2024 Maria Camila Brian</p>
+    </footer>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".card");
+
+        cards.forEach((card) => {
+          card.addEventListener("mouseenter", function () {
+            cards.forEach((c) => c.classList.remove("active"));
+            this.classList.add("active");
+          });
+
+          card.addEventListener("mouseleave", function () {
+            this.classList.remove("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
