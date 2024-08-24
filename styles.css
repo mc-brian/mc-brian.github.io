@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   margin: 0;
@@ -8,6 +13,8 @@ body {
 }
 .hero {
   background: url("background.webp") no-repeat center center/cover;
+  background-size: cover;
+  background-attachment: fixed;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -36,20 +43,29 @@ body {
   font-weight: 700;
 }
 .navigation {
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 .navigation ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
 }
 .navigation ul li {
   display: inline;
   margin: 0 1em;
+  width: 20%;
+  
+  z-index: 25;
+  
+  overflow-y: hidden;
 }
 .navigation ul li a {
   color: #fff;
   font-size: 1.2em;
-  border: 2px solid #fff;
+  border: 0.1em solid #fff;
   padding: 0.5em 1em;
   transition: background-color 0.3s ease;
   text-decoration: none;
@@ -58,30 +74,36 @@ body {
   background-color: #994e6cff;
   color: #333;
 }
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2em;
+  width: 80%;
+  background: rgba(31, 49, 28, 0.85);
+  padding: 2em;
+  border-radius: 0.5em;
+  margin-inline: 10%;
+}
+.skillsabout {
+  flex: 1 1 30%;
+  min-width: 250px;
+  overflow-y: hidden;
+}
 .skillsabout ul {
   display: inline;
   list-style: none;
-  padding: 20px;
+  padding: 0.8em;
 }
 .skillsabout ul li {
   text-align: left;
-  font-size: 1.15em;
+  font-size: 0.8em;
+  margin-bottom: 0.3em;
 }
 .skillsabout h3 {
   text-align: left;
-  font-size: 1.3em;
-}
-.skills-container {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 22%;
-  width: 68%;
-  justify-items: center;
-  margin-inline: 16%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background: rgb(31, 49, 28, 0.85);
+  font-size: 1em;
+  margin-bottom: 0.4em;
 }
 .acercade,
 .contacto,
@@ -102,7 +124,7 @@ body {
   color: #fff;
   text-align: center;
   position: relative;
-  padding-bottom: 115px;
+  padding-bottom: 8%;
 }
 #content {
   min-height: 100vh;
@@ -117,10 +139,11 @@ body {
   position: absolute;
   width: 100%;
   color: #fff;
-  padding: 1em 0;
+  padding: 0.1em 0;
   text-align: center;
   margin: 0;
-  top: 15px;
+  top: 1%;
+  flex-direction: column;
 }
 #main-footer {
   position: fixed;
@@ -138,8 +161,9 @@ body {
   text-align: left;
   bottom: 0;
   left: 0;
-  padding-left: 15px;
+  padding-left: 1.3%;
   z-index: 2;
+  font-size: 0.4em;
 }
 #main-header .navigation ul {
   list-style: none;
@@ -159,9 +183,9 @@ body {
 #about,
 #contact,
 #projects {
-  position: absolute;
+  position: relative;
   width: 100%;
-  top: 75px;
+  top: 5.2%;
   text-align: center;
 }
 #about h2,
@@ -172,23 +196,38 @@ body {
 #about p,
 #contact p,
 #projects p {
-  width: 100%;
+  width: 80%;
   font-size: 1.2em;
-  line-height: 50%;
+  line-height: 1.5;
+  margin-inline: 10%;
 }
 #contact {
   background: #1f311cff;
   opacity: 80%;
-  padding: 20px;
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(40, 100, 82, 0.1);
+  padding: 1.4%;
+  border-radius: 0.1em;
+  box-shadow: 0 0 0.3em rgba(40, 100, 82, 0.1);
   width: 100%;
-  max-width: 400px;
-  margin: 25px;
+  max-width: 28%;
+  margin: 1.6%;
 }
 #contact h2 {
   margin-bottom: 1em;
 }
+
+a:focus,
+button:focus,
+input:focus {
+  outline: 0.1em solid #994e6cff;
+  outline-offset: 0.1em;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+  border-color: #591126;
+}
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -203,9 +242,9 @@ body {
   background-position: center;
   border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.3em 0.5em rgba(0, 0, 0, 0.2);
   width: 24.7%;
-  height: 400px;
+  height: 28%;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
@@ -213,8 +252,8 @@ body {
 }
 .card-title {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 0.4em;
+  left: 0.4em;
   font-size: 1.5em;
   color: #fff;
   transition: color 0.3s ease;
@@ -225,7 +264,7 @@ body {
   width: 100%;
   background: #1f311cff;
   color: #fff;
-  padding: 15px;
+  padding: 0.7em;
   text-align: left;
   opacity: 0;
   transition: opacity 0.3s ease, max-height 0.3s ease;
@@ -234,21 +273,21 @@ body {
 }
 .card:hover {
   transform: scale(1.2);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.5em 0.8em rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
 .card:hover .card-content {
   opacity: 1;
-  max-height: 200px;
+  max-height: 13.8%;
 }
 .card:hover .card-title {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 1rem;
+  left: 1rem;
 }
 .card-content p {
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
 }
 .card-content .read-more {
   display: inline-block;
@@ -257,7 +296,7 @@ body {
   background-color: #994e6cff;
   color: #fff;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 0.8rem;
   transition: background-color 0.3s ease;
 }
 .card-content .read-more:hover {
@@ -272,54 +311,54 @@ body {
   flex-direction: column;
 }
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 10%;
 }
 .form-label {
-  margin-bottom: 5px;
+  margin-bottom: 6%;
   font-weight: 700;
 }
 .form-label-mensaje {
-  margin-bottom: 5px;
+  margin-bottom: 6%;
   font-weight: 700;
 }
 .form-control {
-  padding: 10px;
+  padding: 1em;
   border: 1px solid #afaaaa;
-  border-radius: 3px;
+  border-radius: 0.2em;
   width: 85%;
 }
 .form-control-mensaje {
-  padding: 10px;
-  border: 1px solid #afaaaa;
+  padding: 1em;
+  border: 0.1em solid #afaaaa;
   border-radius: 3px;
   width: 85%;
-  height: 100px;
+  height: 7%;
   resize: none;
 }
 .char-count {
   font-size: 0.7em;
   color: #7f7f7f;
-  margin-top: 5px;
-  margin-left: 18px;
+  margin-top: 0.1em;
+  margin-left: 9%;
   text-align: left;
 }
 .social-text {
   position: sticky;
-  margin-top: 575px;
+  margin-top: 40%;
   font-size: 1.2em;
 }
 .social-buttons {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 5%;
 }
 .social-btn {
   background-color: #333;
   color: #fff;
-  padding: 10px 20px;
-  margin: 0 5px;
+  padding: 0.5em 1em;
+  margin: 0 0.3em;
   text-decoration: none;
-  border-radius: 3px;
+  border-radius: 0.1em;
   font-size: 1em;
 }
 .social-btn:hover {
@@ -328,9 +367,9 @@ body {
 .btn {
   background: #591126ff;
   color: #fff;
-  padding: 10px 15px;
+  padding: 0.5em 0.75em;
   border: none;
-  border-radius: 3px;
+  border-radius: 0.2em;
   cursor: pointer;
 }
 .btn:hover {
@@ -343,3 +382,190 @@ body {
 --dark-green: #1F311Cff;
 --reseda-green: #728F71ff;
 --china-rose: #994E6Cff; */
+
+/* Añadiendo Media Queries para diseño responsivo */
+@media screen and (max-width: 1366px) and (min-height: 768px) {
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .card-container {
+    margin-top: 30%;
+    margin-bottom: 14%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-height: 1024px) {
+  #main-header,
+  #main-footer {
+    padding: 0.5em 0;
+  }
+
+  .hero h1 {
+    font-size: 1.8em;
+  }
+  .card-container {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 95%;
+    margin-bottom: 20px;
+  }
+  #contact {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .form-control,
+  .form-control-mensaje {
+    width: 100%;
+  }
+  .social-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-btn {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 320px) and (min-height: 568px) {
+  *{
+    overflow-x: hidden;
+  }
+  body{
+    font-size: 0.7em;
+  }
+  .hero {
+    background-size: cover;
+    height: 100vh;
+    margin-bottom: 0%;
+    margin-right: 0%;
+  }
+
+  .hero h1 {
+    font-size: 1.5em;
+  }
+
+  .overlay {
+    padding: 1em;
+    height: 100vh;
+  }
+  #main-header,
+  #main-footer {
+    padding: 0.5em 0;
+    font-size: 0.7em;
+  }
+
+  .hero .navigation ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .hero .navigation ul li {
+    width: 100%;
+    margin: 0;
+  }
+
+  .hero .navigation ul li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  #main-header .navigation ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #main-header .navigation ul li {
+    margin: 0.5em;
+  }
+
+  .about {
+    height: 90%;
+    width: 90%;
+  }
+
+  .skills-container {
+    flex-direction: column;
+  }
+
+  .skillsabout {
+    width: 100%;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+    padding: 0 5%;
+    margin-top: 1em;
+  }
+
+  .card {
+    width: 90%;
+    height: 250px;
+    margin-bottom: 1em;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-title {
+    font-size: 1.2em;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  }
+
+  .card-content {
+    position: absolute;
+    color: white;
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover .card-content,
+  .card:focus .card-content {
+    transform: translateY(0);
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  #contact {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .form-control,
+  .form-control-mensaje {
+    width: 100%;
+  }
+
+  .social-btn {
+    margin-bottom: 10px;
+  }
+  .flex-item {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+}
