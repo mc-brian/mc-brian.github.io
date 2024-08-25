@@ -171,11 +171,15 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
+  height: 4em;
+  
 }
 #main-header .navigation ul li {
   margin: 0 1em;
+  height: 4em;
 }
 #main-header .navigation ul li a {
+  display: block;
   color: #fff;
   font-size: 1em;
   text-decoration: none;
@@ -207,8 +211,7 @@ body {
   padding: 1.4%;
   border-radius: 0.1em;
   box-shadow: 0 0 0.3em rgba(40, 100, 82, 0.1);
-  width: 100%;
-  max-width: 28%;
+  width: 28%;
   margin: 1.6%;
 }
 #contact h2 {
@@ -384,24 +387,6 @@ textarea:hover {
 --china-rose: #994E6Cff; */
 
 /* Añadiendo Media Queries para diseño responsivo */
-@media screen and (max-width: 1366px) and (min-height: 768px) {
-
-  .hero h1 {
-    font-size: 2em;
-  }
-
-  .card-container {
-    margin-top: 30%;
-    margin-bottom: 14%;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 90%;
-    margin-bottom: 20px;
-  }
-}
 
 @media screen and (max-width: 768px) and (min-height: 1024px) {
   #main-header,
@@ -439,18 +424,20 @@ textarea:hover {
   }
 }
 
-@media screen and (min-width: 320px) and (min-height: 568px) {
+@media screen and (max-width: 320px) and (min-height: 568px) {
   *{
     overflow-x: hidden;
   }
   body{
     font-size: 0.7em;
+    overflow-y: scroll;
   }
   .hero {
     background-size: cover;
     height: 100vh;
     margin-bottom: 0%;
     margin-right: 0%;
+    overflow-y: hidden;
   }
 
   .hero h1 {
@@ -485,13 +472,18 @@ textarea:hover {
   }
 
   #main-header .navigation ul {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 5%;
   }
 
   #main-header .navigation ul li {
-    margin: 0.5em;
+    margin-inline: 7%;
+    flex: 1;
+    width: 22%;
   }
 
   .about {
@@ -501,28 +493,35 @@ textarea:hover {
 
   .skills-container {
     flex-direction: column;
+    margin-top: 5%;
   }
 
   .skillsabout {
     width: 100%;
   }
+  .skillsabout ul li{
+    font-size: 1em;
+  }
 
   .card-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    flex-wrap: nowrap;
     gap: 1em;
     width: 100%;
-    padding: 0 5%;
-    margin-top: 1em;
+    margin-top: 4em;
+    height: 70%;
+    overflow-y: visible;
   }
-
+  
   .card {
-    width: 90%;
-    height: 250px;
-    margin-bottom: 1em;
+    width: 80%;
+    height: 68%;
+    margin-block-start: 2em;
+    margin-inline: 10%;
     position: relative;
     overflow: hidden;
+    flex-shrink: 0;
   }
 
   .card-title {
@@ -548,12 +547,30 @@ textarea:hover {
   }
 
   .card:hover {
-    transform: scale(1.05);
+    transform: scale(1.24);
+    z-index: 10;
+    width: 90%;
+  }
+  .card:hover .card-content {
+    opacity: 1;
+    max-block-size: 100%;
+  }
+  
+  .card-content p,
+  .card-content .read-more {
+    margin-left: 0.8rem;
+    margin-right: 1rem;
+    display: block;
   }
 
-  #contact {
-    width: 100%;
-    padding: 5px;
+  .card-container::-webkit-scrollbar {
+    display: none;
+  }
+
+#contact {
+    width: 85%;
+    padding: 5%;
+    margin-inline: 7.5%;
   }
 
   .form-control,
