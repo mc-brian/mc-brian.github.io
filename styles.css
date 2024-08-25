@@ -393,23 +393,112 @@ textarea:hover {
   #main-footer {
     padding: 0.5em 0;
   }
-
   .hero h1 {
     font-size: 1.8em;
   }
-  .card-container {
-    flex-direction: column;
+  .hero .navigation ul {
+    align-items: center;
+    gap: 1em;
+  }
+  .hero .navigation ul li {
+    width: 100%;
+    margin: 0;
+  }
+  .hero .navigation ul li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  #main-header .navigation ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    margin-inline: 5%;
+    gap: auto;
   }
 
+  #main-header .navigation ul li {
+    margin-inline: auto;
+    flex: 1;
+    width: 22%;
+  }
+
+  .about {
+    height: 90%;
+    width: 90%;
+  }
+
+  .skills-container {
+    flex-direction: row;
+    margin-top: 5%;
+  }
+
+  .skillsabout {
+    width: 100%;
+  }
+  .skillsabout ul li{
+    font-size: 1em;
+  }
+  .card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    width: 100%;
+    height: 80%;
+    overflow-y: hidden;
+    align-content: flex-start;
+    justify-content: center;
+    padding-top: 2em;
+  }
   .card {
-    width: 95%;
-    margin-bottom: 20px;
+    width: 35%;
+    height: 45%;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin: 0%;
+  }
+  .card-title {
+    font-size: 1.2em;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  }
+  .card-content {
+    position: absolute;
+    color: white;
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  .card:hover .card-content,
+  .card:focus .card-content {
+    transform: translateY(0);
+  }
+  .card:hover {
+    transform: scale(1.24);
+    z-index: 10;
+    width: 45%;
+  }
+  .card:hover .card-content {
+    opacity: 1;
+    max-block-size: 100%;
+  }  
+  .card-content p,
+  .card-content .read-more {
+    margin-left: 0.8rem;
+    margin-right: 1rem;
+    display: block;
   }
   #contact {
     width: 100%;
     padding: 10px;
   }
-
   .form-control,
   .form-control-mensaje {
     width: 100%;
@@ -418,7 +507,6 @@ textarea:hover {
     flex-direction: column;
     align-items: center;
   }
-
   .social-btn {
     margin-bottom: 10px;
   }
@@ -475,13 +563,14 @@ textarea:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    gap: 5%;
+    justify-content: space-around;
+    width: 90%;
+    margin-inline: 5%;
+    gap: auto;
   }
 
   #main-header .navigation ul li {
-    margin-inline: 7%;
+    margin-inline: auto;
     flex: 1;
     width: 22%;
   }
