@@ -211,7 +211,6 @@ body {
   padding: 1.4%;
   border-radius: 0.1em;
   box-shadow: 0 0 0.3em rgba(40, 100, 82, 0.1);
-  width: 28%;
   margin: 1.6%;
 }
 #contact h2 {
@@ -312,29 +311,33 @@ textarea:hover {
 .form {
   display: flex;
   flex-direction: column;
+  width: 90%;
 }
 .form-group {
+  width: 100%;
   margin-bottom: 10%;
 }
 .form-label {
+  width: 100%;
   margin-bottom: 6%;
   font-weight: 700;
 }
 .form-label-mensaje {
+  width: 100%;
   margin-bottom: 6%;
   font-weight: 700;
 }
 .form-control {
+  width: 100%;
   padding: 1em;
   border: 1px solid #afaaaa;
   border-radius: 0.2em;
-  width: 85%;
 }
 .form-control-mensaje {
+  width: 100%;
   padding: 1em;
   border: 0.1em solid #afaaaa;
   border-radius: 3px;
-  width: 85%;
   height: 7%;
   resize: none;
 }
@@ -347,13 +350,7 @@ textarea:hover {
 }
 .social-text {
   position: sticky;
-  margin-top: 40%;
   font-size: 1.2em;
-}
-.social-buttons {
-  display: flex;
-  justify-content: center;
-  margin-top: 5%;
 }
 .social-btn {
   background-color: #333;
@@ -378,16 +375,30 @@ textarea:hover {
 .btn:hover {
   background: #555;
 }
-
 /* CSS HEX 
 --chamoisee: #917961ff;
 --chocolate-cosmos: #591126ff;
 --dark-green: #1F311Cff;
 --reseda-green: #728F71ff;
 --china-rose: #994E6Cff; */
-
 /* Añadiendo Media Queries para diseño responsivo */
-
+@media screen and (min-width: 1366px) and (min-height: 768px) {
+  #contact {
+    width: 28%;
+  }
+  .form-control,
+  .form-control-mensaje {
+    width: 85%;
+  }
+  .social-text {
+    margin-top: 40%;
+  }
+  .social-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+  }
+}
 @media screen and (max-width: 768px) and (min-height: 1024px) {
   #main-header,
   #main-footer {
@@ -401,6 +412,7 @@ textarea:hover {
     gap: 1em;
   }
   .hero .navigation ul li {
+    flex: 1 1 auto;
     width: 100%;
     margin: 0;
   }
@@ -418,23 +430,19 @@ textarea:hover {
     margin-inline: 5%;
     gap: auto;
   }
-
   #main-header .navigation ul li {
     margin-inline: auto;
     flex: 1;
     width: 22%;
   }
-
   .about {
     height: 90%;
     width: 90%;
   }
-
   .skills-container {
     flex-direction: row;
     margin-top: 5%;
   }
-
   .skillsabout {
     width: 100%;
   }
@@ -497,17 +505,20 @@ textarea:hover {
   }
   #contact {
     width: 100%;
-    padding: 10px;
   }
-  .form-control,
-  .form-control-mensaje {
-    width: 100%;
+  .form {
+    align-self: center;
+  }
+  .social-text {
+    margin-top: 30%;
   }
   .social-buttons {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
   }
   .social-btn {
+    margin-top: 2em;
     margin-bottom: 10px;
   }
 }
