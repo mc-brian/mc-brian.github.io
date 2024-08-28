@@ -57,9 +57,7 @@ body {
   display: inline;
   margin: 0 1em;
   width: 20%;
-  
   z-index: 25;
-  
   overflow-y: hidden;
 }
 .navigation ul li a {
@@ -159,7 +157,7 @@ body {
   width: 30%;
   color: #fff;
   text-align: left;
-  bottom: 0;
+  bottom: 0.5em;
   left: 0;
   padding-left: 1.3%;
   z-index: 2;
@@ -215,19 +213,6 @@ body {
 }
 #contact h2 {
   margin-bottom: 1em;
-}
-
-a:focus,
-button:focus,
-input:focus {
-  outline: 0.1em solid #994e6cff;
-  outline-offset: 0.1em;
-}
-
-input[type="text"]:hover,
-input[type="email"]:hover,
-textarea:hover {
-  border-color: #591126;
 }
 
 .card-container {
@@ -312,24 +297,25 @@ textarea:hover {
   display: flex;
   flex-direction: column;
   width: 90%;
+  margin-left: 5%;
 }
 .form-group {
   width: 100%;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 .form-label {
   width: 100%;
-  margin-bottom: 6%;
+  margin-bottom: 4%;
   font-weight: 700;
 }
 .form-label-mensaje {
   width: 100%;
-  margin-bottom: 6%;
+  margin-bottom: 4%;
   font-weight: 700;
 }
 .form-control {
   width: 100%;
-  padding: 1em;
+  padding: 0.6em;
   border: 1px solid #afaaaa;
   border-radius: 0.2em;
 }
@@ -338,7 +324,7 @@ textarea:hover {
   padding: 1em;
   border: 0.1em solid #afaaaa;
   border-radius: 3px;
-  height: 7%;
+  height: 5%;
   resize: none;
 }
 .char-count {
@@ -349,6 +335,8 @@ textarea:hover {
   text-align: left;
 }
 .social-text {
+  margin-top: 9%;
+  margin-bottom: 2%;
   position: sticky;
   font-size: 1.2em;
 }
@@ -382,21 +370,63 @@ textarea:hover {
 --reseda-green: #728F71ff;
 --china-rose: #994E6Cff; */
 /* Añadiendo Media Queries para diseño responsivo */
-@media screen and (min-width: 1366px) and (min-height: 768px) {
+@media screen and (min-width: 1305px) and (min-height: 643px) {
+  * {
+    overflow: hidden;
+  }
+  .hero .navigation ul {
+    align-items: center;
+    gap: 1em;
+  }
+  .hero .navigation ul li {
+    flex: 1 1 auto;
+    width: 100%;
+    margin: 0;
+  }
+  .hero .navigation ul li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0;
+    width: 96%;
+    padding: 0 2%;
+    margin-top: 4em;
+}
+.card {
+    width: 24.7%;
+    height: 400px;
+    position: relative;
+    margin-top: 1.2%;
+    margin-bottom: 4%;
+}
+.card:hover {
+  transform: scale(1.15);
+  z-index: 10;
+}
+.card:hover .card-content {
+  opacity: 1;
+  max-block-size: 100%;
+}  
+.card:hover .card-title {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+}
   #contact {
     width: 28%;
+    height: fit-content;
+  }
+  .form {
+    align-self: center;
   }
   .form-control,
   .form-control-mensaje {
     width: 85%;
-  }
-  .social-text {
-    margin-top: 40%;
-  }
-  .social-buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
   }
 }
 @media screen and (max-width: 768px) and (min-height: 1024px) {
@@ -504,22 +534,19 @@ textarea:hover {
     display: block;
   }
   #contact {
-    width: 100%;
+    width: 90%;
+    margin-top: 3%;
+    padding: 1em;
   }
   .form {
-    align-self: center;
+    width: 100%;
   }
-  .social-text {
-    margin-top: 30%;
+  .form-group {
+    margin-bottom: 1em;
   }
-  .social-buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
-  }
-  .social-btn {
-    margin-top: 2em;
-    margin-bottom: 10px;
+  .form-control,
+  .form-control-mensaje {
+    width: 100%;
   }
 }
 
@@ -667,22 +694,14 @@ textarea:hover {
     display: none;
   }
 
-#contact {
-    width: 85%;
-    padding: 5%;
-    margin-inline: 7.5%;
+  #contact {
+    width: 90%;
+    height: 85%;
+    margin-top: 3%;
+    padding: 1em;
   }
-
   .form-control,
   .form-control-mensaje {
     width: 100%;
-  }
-
-  .social-btn {
-    margin-bottom: 10px;
-  }
-  .flex-item {
-    flex: 1 1 100%;
-    margin-bottom: 20px;
   }
 }
