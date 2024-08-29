@@ -374,6 +374,9 @@ body {
   * {
     overflow: hidden;
   }
+  body {
+    font-size: 18px;
+  }
   .hero .navigation ul {
     align-items: center;
     gap: 1em;
